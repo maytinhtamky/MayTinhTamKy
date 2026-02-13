@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Tam Kỳ - Đang chuyển hướng...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1E3A8A 0%, #2d4a9a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loader-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: #FFFFFF;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .logo svg {
+            width: 48px;
+            height: 48px;
+            color: #1E3A8A;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 0.8;
+            margin-bottom: 24px;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ffd700, #ffb700);
+            border-radius: 2px;
+            animation: loading 1.5s ease forwards;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        .device-info {
+            font-size: 13px;
+            opacity: 0.6;
+            margin-top: 16px;
+        }
+
+        .manual-links {
+            margin-top: 24px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .manual-link {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .manual-link:hover {
+            background: rgba(255,215,0,0.1);
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #ffd700;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+        </div>
+        
+        <div class="spinner" id="spinner"></div>
+        
+        <h1>Máy Tính Tam Kỳ</h1>
+        <p id="status-text">Đang phát hiện thiết bị...</p>
+        
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        
+        <div class="device-info" id="device-info">Đang kiểm tra...</div>
+    </div>
+
+    <script>
+        // Device Detection Logic
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const platform = navigator.platform.toLowerCase();
+            
+            // Mobile detection patterns
+            const mobilePatterns = [
+                /android/i,
+                /webos/i,
+                /iphone/i,
+                /ipad/i,
+                /ipod/i,
+                /blackberry/i,
+                /windows phone/i,
+                /mobile/i,
+                /tablet/i
+            ];
+            
+            // Screen size check
+            const isSmallScreen = window.innerWidth <= 768;
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            
+            // Check user agent
+            const isMobileUA = mobilePatterns.some(pattern => pattern.test(userAgent));
+            
+            // Check platform
+            const isMobilePlatform = /android|ios|iphone|ipad|ipod/.test(platform);
+            
+            // Additional checks
+            const isMobile = isMobileUA || isMobilePlatform || (isSmallScreen && isTouchDevice);
+            
+            return {
+                isMobile: isMobile,
+                isSmallScreen: isSmallScreen,
+                isTouchDevice: isTouchDevice,
+                userAgent: userAgent,
+                screenWidth: window.innerWidth,
+                screenHeight: window.innerHeight
+            };
+        }
+
+        function redirect() {
+            const device = detectDevice();
+            const statusText = document.getElementById('status-text');
+            const deviceInfo = document.getElementById('device-info');
+            const spinner = document.getElementById('spinner');
+            
+            // Update status
+            if (device.isMobile) {
+                statusText.textContent = 'Đang chuyển đến phiên bản Mobile...';
+                deviceInfo.textContent = `📱 Phát hiện: Mobile/Tablet (${device.screenWidth}x${device.screenHeight})`;
+                
+                setTimeout(() => {
+                    window.location.href = 'Moblie/Máy%20Tính%20Tam%20Kỳ%20(Moblie).html';
+                }, 1500);
+            } else {
+                statusText.textContent = 'Đang chuyển đến phiên bản Desktop...';
+                deviceInfo.textContent = `💻 Phát hiện: Desktop/Laptop (${device.screenWidth}x${device.screenHeight})`;
+                
+                setTimeout(() => {
+                    window.location.href = 'PC/Máy%20Tính%20Tam%20Kỳ%20(PC).html';
+                }, 1500);
+            }
+            
+            // Log for debugging
+            console.log('Device Detection:', device);
+        }
+
+        // Run detection when page loads
+        window.addEventListener('load', redirect);
+
+        // Also check on resize (for testing)
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                console.log('Screen resized:', window.innerWidth, 'x', window.innerHeight);
+            }, 250);
+        });
+
+        // Prevent back button issues
+        history.replaceState(null, null, location.href);
+    </script>
+</body>
+</html>
