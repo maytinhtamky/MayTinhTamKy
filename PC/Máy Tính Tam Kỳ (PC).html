@@ -352,43 +352,33 @@
         }
 
         /* ============================================
-           BADGE SALE - CSS THUẦN (KHÔNG CẦN ẢNH)
-           ============================================ */
+        BADGE SALE - TÁCH RIÊNG CHO TỪNG LOẠI CARD
+        ============================================ */
 
-        .badge-sale {
+        /* ===== GAMING CARD ===== */
+        .gaming-card .badge-sale {
             position: absolute;
             top: 8px;
             right: 8px;
             width: 60px;
             height: 60px;
             z-index: 100;
-            animation: badge-pulse 1.5s ease-in-out infinite;
+            animation: badge-pulse-rotate 1.5s ease-in-out infinite;
+            background-color: transparent;
         }
 
-            .badge-sale::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
+            .gaming-card .badge-sale img {
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+                object-fit: contain;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(220, 38, 38, 1))
+                        drop-shadow(0 6px 20px rgba(220, 38, 38, 1)) 
+                        drop-shadow(0 10px 40px rgba(220, 38, 38, 1));
+                background-color: transparent;
             }
 
-            .badge-sale::after {
-                content: '';
-                position: absolute;
-                top: 3px;
-                left: 3px;
-                right: 3px;
-                bottom: 3px;
-                background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            }
-
-        .badge-sale-text {
+        .gaming-card .badge-sale-text {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -398,20 +388,168 @@
             font-size: 12px;
             text-align: center;
             line-height: 1;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
             pointer-events: none;
             white-space: nowrap;
-            z-index: 101;
             animation: text-pulse 1.5s ease-in-out infinite;
         }
 
-        @keyframes badge-pulse {
+        /* ===== COMPONENT CARD ===== */
+        .component-card .badge-sale {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+            animation: badge-pulse-rotate 1.5s ease-in-out infinite;
+            background-color: transparent;
+        }
+
+            .component-card .badge-sale img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(220, 38, 38, 1)) drop-shadow(0 6px 20px rgba(220, 38, 38, 1)) drop-shadow(0 10px 40px rgba(220, 38, 38, 1));
+                background-color: transparent;
+            }
+
+        .component-card .badge-sale-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            pointer-events: none;
+            white-space: nowrap;
+            animation: text-pulse 1.5s ease-in-out infinite;
+        }
+
+        /* ===== LAPTOP CARD ===== */
+        .laptop-card .badge-sale {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+            animation: badge-pulse-rotate 1.5s ease-in-out infinite;
+            background: transparent;
+        }
+
+            .laptop-card .badge-sale img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(220, 38, 38, 1)) drop-shadow(0 6px 20px rgba(220, 38, 38, 1)) drop-shadow(0 10px 40px rgba(220, 38, 38, 1));
+                background-color: transparent;
+            }
+
+        .laptop-card .badge-sale-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            pointer-events: none;
+            white-space: nowrap;
+            animation: text-pulse 1.5s ease-in-out infinite;
+        }
+
+        /* ===== PRINTER CARD ===== */
+        .printer-card .badge-sale {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+            animation: badge-pulse-rotate 1.5s ease-in-out infinite;
+            background: transparent;
+        }
+
+            .printer-card .badge-sale img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(220, 38, 38, 1)) drop-shadow(0 6px 20px rgba(220, 38, 38, 1)) drop-shadow(0 10px 40px rgba(220, 38, 38, 1));
+                background-color: transparent;
+            }
+
+        .printer-card .badge-sale-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            pointer-events: none;
+            white-space: nowrap;
+            animation: text-pulse 1.5s ease-in-out infinite;
+        }
+
+        /* ===== WEBCAM CARD ===== */
+        .webcam-card .badge-sale {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 60px;
+            height: 60px;
+            z-index: 100;
+            animation: badge-pulse-rotate 1.5s ease-in-out infinite;
+            background: transparent;
+        }
+
+            .webcam-card .badge-sale img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+                filter: drop-shadow(0 2px 8px rgba(220, 38, 38, 1)) drop-shadow(0 6px 20px rgba(220, 38, 38, 1)) drop-shadow(0 10px 40px rgba(220, 38, 38, 1));
+                background-color: transparent;
+            }
+
+        .webcam-card .badge-sale-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFFFFF;
+            font-weight: 900;
+            font-size: 12px;
+            text-align: center;
+            line-height: 1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+            pointer-events: none;
+            white-space: nowrap;
+            animation: text-pulse 1.5s ease-in-out infinite;
+        }
+
+        /* ===== KEYFRAMES CHUNG ===== */
+        @keyframes badge-pulse-rotate {
             0%, 100% {
-                transform: scale(1) rotate(0deg);
+                transform: scale(1) rotate(-10deg);
             }
 
             50% {
-                transform: scale(1.15) rotate(5deg);
+                transform: scale(1.15) rotate(10deg);
             }
         }
 
@@ -427,70 +565,23 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .badge-sale {
+            .gaming-card .badge-sale,
+            .component-card .badge-sale,
+            .laptop-card .badge-sale,
+            .printer-card .badge-sale,
+            .webcam-card .badge-sale {
                 width: 50px;
                 height: 50px;
                 top: 6px;
                 right: 6px;
             }
 
-            .badge-sale-text {
+            .gaming-card .badge-sale-text,
+            .component-card .badge-sale-text,
+            .laptop-card .badge-sale-text,
+            .printer-card .badge-sale-text,
+            .webcam-card .badge-sale-text {
                 font-size: 10px;
-            }
-
-            .hero-home {
-                height: 500px;
-            }
-
-            .hero-title {
-                font-size: 36px;
-            }
-
-            .hero-contact-title, .hero-about-title {
-                font-size: 36px;
-            }
-
-            .section {
-                padding: 40px 20px;
-            }
-
-            .gaming-section, .components-section, .webcam-section, .printer-section, .installment-banner, .cta-section, .laptop-section {
-                margin: 0 20px 40px;
-                padding: 30px;
-            }
-
-            .gaming-grid, .components-grid, .laptop-grid, .webcam-grid, .printer-grid, .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .installment-banner {
-                flex-direction: column;
-            }
-
-            .installment-image {
-                width: 100%;
-                height: 200px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .contact-wrapper {
-                padding: 40px 20px;
-            }
-
-            .map-container {
-                height: 300px;
-            }
-
-            .year-number {
-                font-size: 80px;
-            }
-
-            .about-year, .about-mission, .about-vision, .awards-section {
-                padding: 40px 20px;
             }
         }
 
@@ -1567,6 +1658,7 @@
             <div class="gaming-grid">
                 <div class="gaming-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
                     <img src="https://img.pikbest.com/backgrounds/20241129/computer-gaming-mouse-transparent-background_11145602.jpg!sw800" alt="Chuột Gaming">
@@ -1578,6 +1670,7 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-19%</span>
                     </div>
                     <img src="https://png.pngtree.com/png-vector/20250517/ourmid/pngtree-illuminated-white-compact-mechanical-keyboard-with-rainbow-rgb-backlighting-for-gaming-png-image_16311227.png    " alt="Bàn phím cơ">
@@ -1589,6 +1682,7 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
                     <img src="https://static.vecteezy.com/system/resources/previews/054/606/511/non_2x/gaming-chair-isolated-on-transparent-background-free-png.png    " alt="Ghế gaming">
@@ -1600,6 +1694,7 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-11%</span>
                     </div>
                     <img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-curve-screen-gaming-monitor-device-png-image_10206079.png    " alt="Màn hình gaming">
@@ -1621,6 +1716,7 @@
             <div class="components-grid">
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
                     <img src="https://bizweb.dktcdn.net/100/410/941/products/i5-12600kf-995d2025-faa2-4567-9dbd-3eb96f480dcb.jpg?v=1720869641130    " alt="CPU Intel">
@@ -1632,6 +1728,7 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
                     <img src="https://hanoicomputercdn.com/media/product/56282_cpu_amd_ryzen_5_5600x.jpg    " alt="CPU AMD">
@@ -1643,6 +1740,7 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
                     <img src="https://media.rs-online.com/Y2662109-01.jpg    " alt="RAM DDR4">
@@ -1654,6 +1752,7 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
                     <img src="https://nguyencongpc.vn/media/lib/10-08-2022/ramkingstonfurybeastrgb32gb1.jpeg    " alt="RAM DDR5">
@@ -1665,6 +1764,7 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
                     <img src="https://tuanphong.vn/pictures/full/2021/01/1611137200-948-o-cung-ssd-500gb-samsung-870-evo-mz-77e500bw-6.jpg    " alt="SSD SATA">
@@ -1676,6 +1776,7 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
                     <img src="https://nguyencongpc.vn/media/product/17066-samsung-980-pro-1tb-2.JPG    " alt="SSD NVMe">
@@ -1697,6 +1798,7 @@
             <div class="laptop-grid">
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
                     <img src="https://bizweb.dktcdn.net/thumb/grande/100/512/769/products/asus-rog-strix-g15-3-7b0021cd-b6ad-4303-84f2-7a76a524d973.webp?v=1721449212623    " alt="Asus Laptop">
@@ -1708,6 +1810,7 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
                     <img src="https://laptop88.vn/media/product/5144_msi_gf63_thin_9sc_1030vn_2.jpg    " alt="MSI Laptop">
@@ -1719,6 +1822,7 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-8%</span>
                     </div>
                     <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/330075/dell-inspiron-15-3520-i5-n3520-i5u085w11slu-1-638627942653445825-750x500.jpg    " alt="Dell Laptop">
@@ -1730,6 +1834,7 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
                     <img src="https://songphuong.vn/Content/uploads/2024/01/Laptop-Acer-Aspire-3-N23H4-2.jpg    " alt="Acer Laptop">
@@ -1741,6 +1846,7 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
                     <img src="https://zshop.vn/images/companies/1/san_pham/Lenovo/gen%203%202022/ThinkPad%20E14%20Gen%204%20(5)1.jpg?1659499760671    " alt="Lenovo Laptop">
@@ -1752,6 +1858,7 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-14%</span>
                     </div>
                     <img src="https://cdn.hoanghamobile.vn/Uploads/2023/10/31/7c0w2pa-2.png    " alt="HP Laptop">
@@ -1773,6 +1880,7 @@
             <div class="printer-grid">
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
                     <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/399360-black-and-white-laser-printers-hp-laserjet-pro-m404n-10009002.png" alt="Máy in laser">
@@ -1785,6 +1893,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
                     <img src="https://s7d1.scene7.com/is/image/canon/3102C019_color-imageclass-mf641cw_4?fmt=webp-alpha    " alt="Máy in laser màu">
@@ -1797,6 +1906,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
                     <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/410/941/products/l3110-1.jpg?v=1616377268950    " alt="Máy in phun">
@@ -1809,6 +1919,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
                     <img src="https://vn.canon/media/image/2021/01/12/73e2dacfc2d54759ba40bc60fba6fbce_CISS_CM_AS_FR_op-362x320.png    " alt="Máy in ảnh">
@@ -1821,6 +1932,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
                     <img src="https://nhatkhanhtech.com/wp-content/uploads/2024/11/May-in-kim-Epson-LQ310_208582.png    " alt="Máy in kim">
@@ -1833,6 +1945,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-16%</span>
                     </div>
                     <img src="https://i8.amplience.net/i/epsonemear/04_fy21_sidm_left_en?    $product-xlarge$&fmt=auto&img404=missing_product&v=1" alt="Máy in kim Epson">
@@ -1845,6 +1958,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-30%</span>
                     </div>
                     <img src="https://mayposbanhang.vn/wp-content/uploads/2024/06/may-in-ma-vach-xprinter-xp-420b-500x300.jpg    " alt="Máy in nhiệt">
@@ -1857,6 +1971,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
                     <img src="https://mediaserver.goepson.com/ImConvServlet/imconv/1c00ed930565cdc2dbcefddf22e699078f7ac0dc/1200Wx1200H?use=banner&hybrisId=B2C&assetDescr=Copy%20of%20FY18_THI_Left_Paper_EBCK    " alt="Máy in hóa đơn">
@@ -1869,6 +1984,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
                     <img src="https://www.tnc.com.vn/uploads/product/gallery/Lide-300-1.png    " alt="Máy scan">
@@ -1881,6 +1997,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
                     <img src="https://www.ccn.com.vn/images/products/2021414177371.jpg    " alt="Máy scan ADF">
@@ -1893,6 +2010,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
                     <img src="https://www.brother.com.vn/-/media/ap2/products/faxmachine/fax-2840/fax-machine-fax-2840-l.webp?rev=d1d70615152e49f1bc580c2281b786ba    " alt="Máy fax">
@@ -1905,6 +2023,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
                     <img src="https://bizweb.dktcdn.net/100/521/696/products/2021-4-19-637544247657181951-brother-mfc-t920dw-den-2.jpg?v=1749697474963    " alt="Máy fax phun">
@@ -1917,6 +2036,7 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-28%</span>
                     </div>
                     <img src="https://www.meme3d.com/wp-content/uploads/2022/12/ender-3-v2.webp    " alt="Máy in 3D">
@@ -1939,6 +2059,7 @@
             <div class="webcam-grid">
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770433521_3574.png    " alt="Insta360 Link 2">
@@ -1947,6 +2068,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
                     <img src="https://resource.logitech.com/content/dam/logitech/en/products/webcams/mx-brio-705/gallery/mx-brio-705-for-business-1.png    " alt="Logitech MX Brio">
@@ -1955,6 +2077,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205288_5057.png    " alt="Opal Tadpole">
@@ -1963,6 +2086,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-30%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770204854_6499.png    " alt="Logitech Brio">
@@ -1971,6 +2095,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
                     <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/02/razer-kiyo-pro-ultra.png    " alt="Razer Kiyo Pro">
@@ -1979,6 +2104,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-35%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770430836_8316.png    " alt="Anker PowerConf">
@@ -1987,6 +2113,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770213811_9906.png    " alt="Logitech C922">
@@ -1995,6 +2122,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205056_4525.png    " alt="Jabra PanaCast">
@@ -2003,6 +2131,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
                     <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770431963_5698.png    " alt="Poly Studio">
@@ -2011,6 +2140,7 @@
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
                         <span class="badge-sale-text">-40%</span>
                     </div>
                     <img src="https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/products/logitech/webcams/c270-hd-webcam/gallery/c270-hd-webcam-1-0224.png" alt="Logitech C270">
