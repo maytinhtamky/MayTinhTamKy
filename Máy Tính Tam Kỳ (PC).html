@@ -121,7 +121,7 @@
             height: 600px;
             display: flex;
             align-items: center;
-            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png    ');
+            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png     ');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -222,7 +222,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png    ');
+            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png     ');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -268,7 +268,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png    ');
+            background-image: url('https://mediadirhub.com/vibe/modern-computer-retail-storefront-with-digital-display-and-blue-white-color-scheme.png     ');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1548,6 +1548,147 @@
             font-size: 14px;
         }
 
+        /* ============================================
+           FLOATING CONTACT BUTTONS
+           ============================================ */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .floating-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .floating-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            }
+
+            .floating-btn img {
+                width: 60%;
+                height: 60%;
+                object-fit: contain;
+            }
+
+        .zalo-btn {
+            background: #0068FF;
+            animation: zalo-pulse 2s infinite;
+        }
+
+            .zalo-btn img {
+                width: 70%;
+                height: 70%;
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+            }
+
+        .messenger-btn {
+            background: linear-gradient(135deg, #0099FF 0%, #A033FF 50%, #FF5C87 100%);
+            animation: messenger-pulse 2s infinite;
+        }
+
+        .phone-btn {
+            background: #10B981;
+            animation: phone-pulse 2s infinite;
+        }
+
+        @keyframes zalo-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(0,104,255,0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0,104,255,0);
+            }
+        }
+
+        @keyframes messenger-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(0,153,255,0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(0,153,255,0);
+            }
+        }
+
+        @keyframes phone-pulse {
+            0%,100% {
+                box-shadow: 0 0 0 0 rgba(16,185,129,0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(16,185,129,0);
+            }
+        }
+
+        /* Tooltip */
+        .floating-btn::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 70px;
+            background: #1e293b;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .floating-btn::after {
+            content: '';
+            position: absolute;
+            right: 60px;
+            border: 6px solid transparent;
+            border-left-color: #1e293b;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .floating-btn:hover::before,
+        .floating-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media(max-width:768px) {
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+                gap: 12px;
+            }
+
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+                .floating-btn::before,
+                .floating-btn::after {
+                    display: none;
+                }
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .gaming-grid {
@@ -1664,10 +1805,10 @@
             <div class="gaming-grid">
                 <div class="gaming-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
-                    <img src="https://img.pikbest.com/backgrounds/20241129/computer-gaming-mouse-transparent-background_11145602.jpg!sw800" alt="Chuột Gaming">
+                    <img src="https://img.pikbest.com/backgrounds/20241129/computer-gaming-mouse-transparent-background_11145602.jpg !sw800" alt="Chuột Gaming">
                     <div class="gaming-card-content">
                         <h3 class="gaming-card-title">Chuột Gaming</h3>
                         <p class="gaming-card-desc">Logitech, Razer, SteelSeries - Độ nhạy cao, RGB đẹp mắt</p>
@@ -1676,10 +1817,10 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-19%</span>
                     </div>
-                    <img src="https://png.pngtree.com/png-vector/20250517/ourmid/pngtree-illuminated-white-compact-mechanical-keyboard-with-rainbow-rgb-backlighting-for-gaming-png-image_16311227.png    " alt="Bàn phím cơ">
+                    <img src="https://png.pngtree.com/png-vector/20250517/ourmid/pngtree-illuminated-white-compact-mechanical-keyboard-with-rainbow-rgb-backlighting-for-gaming-png-image_16311227.png     " alt="Bàn phím cơ">
                     <div class="gaming-card-content">
                         <h3 class="gaming-card-title">Bàn phím cơ</h3>
                         <p class="gaming-card-desc">Switch Cherry, Gateron - Tactile và Linear đầy đủ</p>
@@ -1688,10 +1829,10 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
-                    <img src="https://static.vecteezy.com/system/resources/previews/054/606/511/non_2x/gaming-chair-isolated-on-transparent-background-free-png.png    " alt="Ghế gaming">
+                    <img src="https://static.vecteezy.com/system/resources/previews/054/606/511/non_2x/gaming-chair-isolated-on-transparent-background-free-png.png     " alt="Ghế gaming">
                     <div class="gaming-card-content">
                         <h3 class="gaming-card-title">Ghế Gaming</h3>
                         <p class="gaming-card-desc">Ergonomic, đệm cao su non, tựa lưng adjustable</p>
@@ -1700,10 +1841,10 @@
                 </div>
                 <div class="gaming-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-11%</span>
                     </div>
-                    <img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-curve-screen-gaming-monitor-device-png-image_10206079.png    " alt="Màn hình gaming">
+                    <img src="https://png.pngtree.com/png-vector/20231018/ourmid/pngtree-curve-screen-gaming-monitor-device-png-image_10206079.png     " alt="Màn hình gaming">
                     <div class="gaming-card-content">
                         <h3 class="gaming-card-title">Màn hình Gaming</h3>
                         <p class="gaming-card-desc">144Hz, 240Hz, 4K - IPS, VA, OLED đủ loại</p>
@@ -1722,10 +1863,10 @@
             <div class="components-grid">
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
-                    <img src="https://bizweb.dktcdn.net/100/410/941/products/i5-12600kf-995d2025-faa2-4567-9dbd-3eb96f480dcb.jpg?v=1720869641130    " alt="CPU Intel">
+                    <img src="https://bizweb.dktcdn.net/100/410/941/products/i5-12600kf-995d2025-faa2-4567-9dbd-3eb96f480dcb.jpg?v=1720869641130     " alt="CPU Intel">
                     <div class="component-info">
                         <h3 class="component-title">CPU Intel Core i5-12400F</h3>
                         <p class="component-specs">6 nhân 12 luồng, 4.4GHz Turbo, DDR4/DDR5</p>
@@ -1734,10 +1875,10 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
-                    <img src="https://hanoicomputercdn.com/media/product/56282_cpu_amd_ryzen_5_5600x.jpg    " alt="CPU AMD">
+                    <img src="https://hanoicomputercdn.com/media/product/56282_cpu_amd_ryzen_5_5600x.jpg     " alt="CPU AMD">
                     <div class="component-info">
                         <h3 class="component-title">CPU AMD Ryzen 5 5600X</h3>
                         <p class="component-specs">6 nhân 12 luồng, 4.6GHz Boost, AM4</p>
@@ -1746,10 +1887,10 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
-                    <img src="https://media.rs-online.com/Y2662109-01.jpg    " alt="RAM DDR4">
+                    <img src="https://media.rs-online.com/Y2662109-01.jpg     " alt="RAM DDR4">
                     <div class="component-info">
                         <h3 class="component-title">RAM Corsair 16GB DDR4</h3>
                         <p class="component-specs">2x8GB, Bus 3200MHz, RGB heatsink</p>
@@ -1758,10 +1899,10 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
-                    <img src="https://nguyencongpc.vn/media/lib/10-08-2022/ramkingstonfurybeastrgb32gb1.jpeg    " alt="RAM DDR5">
+                    <img src="https://nguyencongpc.vn/media/lib/10-08-2022/ramkingstonfurybeastrgb32gb1.jpeg     " alt="RAM DDR5">
                     <div class="component-info">
                         <h3 class="component-title">RAM Kingston 32GB DDR5</h3>
                         <p class="component-specs">2x16GB, Bus 5600MHz, Fury Beast</p>
@@ -1770,10 +1911,10 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
-                    <img src="https://tuanphong.vn/pictures/full/2021/01/1611137200-948-o-cung-ssd-500gb-samsung-870-evo-mz-77e500bw-6.jpg    " alt="SSD SATA">
+                    <img src="https://tuanphong.vn/pictures/full/2021/01/1611137200-948-o-cung-ssd-500gb-samsung-870-evo-mz-77e500bw-6.jpg     " alt="SSD SATA">
                     <div class="component-info">
                         <h3 class="component-title">SSD Samsung 870 EVO 500GB</h3>
                         <p class="component-specs">2.5" SATA III, 560MB/s read, bền bỉ</p>
@@ -1782,10 +1923,10 @@
                 </div>
                 <div class="component-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
-                    <img src="https://nguyencongpc.vn/media/product/17066-samsung-980-pro-1tb-2.JPG    " alt="SSD NVMe">
+                    <img src="https://nguyencongpc.vn/media/product/17066-samsung-980-pro-1tb-2.JPG     " alt="SSD NVMe">
                     <div class="component-info">
                         <h3 class="component-title">SSD NVMe Samsung 980 1TB</h3>
                         <p class="component-specs">PCIe 3.0, 3500MB/s read, heatsink</p>
@@ -1804,10 +1945,10 @@
             <div class="laptop-grid">
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
-                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/512/769/products/asus-rog-strix-g15-3-7b0021cd-b6ad-4303-84f2-7a76a524d973.webp?v=1721449212623    " alt="Asus Laptop">
+                    <img src="https://bizweb.dktcdn.net/thumb/grande/100/512/769/products/asus-rog-strix-g15-3-7b0021cd-b6ad-4303-84f2-7a76a524d973.webp?v=1721449212623     " alt="Asus Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">ASUS</div>
                         <h3 class="laptop-name">ROG Strix G15</h3>
@@ -1816,10 +1957,10 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
-                    <img src="https://laptop88.vn/media/product/5144_msi_gf63_thin_9sc_1030vn_2.jpg    " alt="MSI Laptop">
+                    <img src="https://laptop88.vn/media/product/5144_msi_gf63_thin_9sc_1030vn_2.jpg     " alt="MSI Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">MSI</div>
                         <h3 class="laptop-name">GF63 Thin</h3>
@@ -1828,10 +1969,10 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-8%</span>
                     </div>
-                    <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/330075/dell-inspiron-15-3520-i5-n3520-i5u085w11slu-1-638627942653445825-750x500.jpg    " alt="Dell Laptop">
+                    <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/330075/dell-inspiron-15-3520-i5-n3520-i5u085w11slu-1-638627942653445825-750x500.jpg     " alt="Dell Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">DELL</div>
                         <h3 class="laptop-name">Inspiron 15 3520</h3>
@@ -1840,10 +1981,10 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
-                    <img src="https://songphuong.vn/Content/uploads/2024/01/Laptop-Acer-Aspire-3-N23H4-2.jpg    " alt="Acer Laptop">
+                    <img src="https://songphuong.vn/Content/uploads/2024/01/Laptop-Acer-Aspire-3-N23H4-2.jpg     " alt="Acer Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">ACER</div>
                         <h3 class="laptop-name">Aspire 3</h3>
@@ -1852,10 +1993,10 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
-                    <img src="https://zshop.vn/images/companies/1/san_pham/Lenovo/gen%203%202022/ThinkPad%20E14%20Gen%204%20(5)1.jpg?1659499760671    " alt="Lenovo Laptop">
+                    <img src="https://zshop.vn/images/companies/1/san_pham/Lenovo/gen%203%202022/ThinkPad%20E14%20Gen%204%20(5)1.jpg?1659499760671     " alt="Lenovo Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">LENOVO</div>
                         <h3 class="laptop-name">ThinkPad E14</h3>
@@ -1864,10 +2005,10 @@
                 </div>
                 <div class="laptop-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-14%</span>
                     </div>
-                    <img src="https://cdn.hoanghamobile.vn/Uploads/2023/10/31/7c0w2pa-2.png    " alt="HP Laptop">
+                    <img src="https://cdn.hoanghamobile.vn/Uploads/2023/10/31/7c0w2pa-2.png     " alt="HP Laptop">
                     <div class="laptop-info">
                         <div class="laptop-brand">HP</div>
                         <h3 class="laptop-name">Pavilion 14-dv</h3>
@@ -1886,10 +2027,10 @@
             <div class="printer-grid">
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
-                    <img src="https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/399360-black-and-white-laser-printers-hp-laserjet-pro-m404n-10009002.png" alt="Máy in laser">
+                    <img src="https://crdms.images.consumerreports.org/f_auto ,w_600/prod/products/cr/models/399360-black-and-white-laser-printers-hp-laserjet-pro-m404n-10009002.png" alt="Máy in laser">
                     <div class="printer-info">
                         <div class="printer-type">Laser Trắng Đen</div>
                         <h3 class="printer-name">HP LaserJet Pro M404n</h3>
@@ -1899,10 +2040,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
-                    <img src="https://s7d1.scene7.com/is/image/canon/3102C019_color-imageclass-mf641cw_4?fmt=webp-alpha    " alt="Máy in laser màu">
+                    <img src="https://s7d1.scene7.com/is/image/canon/3102C019_color-imageclass-mf641cw_4?fmt=webp-alpha     " alt="Máy in laser màu">
                     <div class="printer-info">
                         <div class="printer-type">Laser Màu</div>
                         <h3 class="printer-name">Canon Color imageCLASS MF641Cw</h3>
@@ -1912,10 +2053,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
-                    <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/410/941/products/l3110-1.jpg?v=1616377268950    " alt="Máy in phun">
+                    <img src="https://bizweb.dktcdn.net/thumb/1024x1024/100/410/941/products/l3110-1.jpg?v=1616377268950     " alt="Máy in phun">
                     <div class="printer-info">
                         <div class="printer-type">Phun Mực Đa Năng</div>
                         <h3 class="printer-name">Epson L3210 (L3110)</h3>
@@ -1925,10 +2066,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
-                    <img src="https://vn.canon/media/image/2021/01/12/73e2dacfc2d54759ba40bc60fba6fbce_CISS_CM_AS_FR_op-362x320.png    " alt="Máy in ảnh">
+                    <img src="https://vn.canon/media/image/2021/01/12/73e2dacfc2d54759ba40bc60fba6fbce_CISS_CM_AS_FR_op-362x320.png     " alt="Máy in ảnh">
                     <div class="printer-info">
                         <div class="printer-type">In Ảnh Chuyên Nghiệp</div>
                         <h3 class="printer-name">Canon PIXMA G670</h3>
@@ -1938,10 +2079,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
-                    <img src="https://nhatkhanhtech.com/wp-content/uploads/2024/11/May-in-kim-Epson-LQ310_208582.png    " alt="Máy in kim">
+                    <img src="https://nhatkhanhtech.com/wp-content/uploads/2024/11/May-in-kim-Epson-LQ310_208582.png     " alt="Máy in kim">
                     <div class="printer-info">
                         <div class="printer-type">In Kim (Hóa Đơn)</div>
                         <h3 class="printer-name">Epson LQ-310</h3>
@@ -1951,10 +2092,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-16%</span>
                     </div>
-                    <img src="https://i8.amplience.net/i/epsonemear/04_fy21_sidm_left_en?    $product-xlarge$&fmt=auto&img404=missing_product&v=1" alt="Máy in kim Epson">
+                    <img src="https://i8.amplience.net/i/epsonemear/04_fy21_sidm_left_en?     $product-xlarge$&fmt=auto&img404=missing_product&v=1" alt="Máy in kim Epson">
                     <div class="printer-info">
                         <div class="printer-type">In Kim Công Nghiệp</div>
                         <h3 class="printer-name">Epson LQ-690</h3>
@@ -1964,10 +2105,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-30%</span>
                     </div>
-                    <img src="https://mayposbanhang.vn/wp-content/uploads/2024/06/may-in-ma-vach-xprinter-xp-420b-500x300.jpg    " alt="Máy in nhiệt">
+                    <img src="https://mayposbanhang.vn/wp-content/uploads/2024/06/may-in-ma-vach-xprinter-xp-420b-500x300.jpg     " alt="Máy in nhiệt">
                     <div class="printer-info">
                         <div class="printer-type">In Nhiệt (Tem Nhãn)</div>
                         <h3 class="printer-name">Xprinter XP-420B</h3>
@@ -1977,10 +2118,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
-                    <img src="https://mediaserver.goepson.com/ImConvServlet/imconv/1c00ed930565cdc2dbcefddf22e699078f7ac0dc/1200Wx1200H?use=banner&hybrisId=B2C&assetDescr=Copy%20of%20FY18_THI_Left_Paper_EBCK    " alt="Máy in hóa đơn">
+                    <img src="https://mediaserver.goepson.com/ImConvServlet/imconv/1c00ed930565cdc2dbcefddf22e699078f7ac0dc/1200Wx1200H?use=banner&hybrisId=B2C&assetDescr=Copy%20of%20FY18_THI_Left_Paper_EBCK     " alt="Máy in hóa đơn">
                     <div class="printer-info">
                         <div class="printer-type">In Hóa Đơn Nhiệt</div>
                         <h3 class="printer-name">Epson TM-T82III</h3>
@@ -1990,10 +2131,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
-                    <img src="https://www.tnc.com.vn/uploads/product/gallery/Lide-300-1.png    " alt="Máy scan">
+                    <img src="https://www.tnc.com.vn/uploads/product/gallery/Lide-300-1.png     " alt="Máy scan">
                     <div class="printer-info">
                         <div class="printer-type">Scan Tài Liệu</div>
                         <h3 class="printer-name">Canon CanoScan LiDE 300</h3>
@@ -2003,10 +2144,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
-                    <img src="https://www.ccn.com.vn/images/products/2021414177371.jpg    " alt="Máy scan ADF">
+                    <img src="https://www.ccn.com.vn/images/products/2021414177371.jpg     " alt="Máy scan ADF">
                     <div class="printer-info">
                         <div class="printer-type">Scan ADF Nhanh</div>
                         <h3 class="printer-name">Fujitsu ScanSnap iX1400</h3>
@@ -2016,10 +2157,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
-                    <img src="https://www.brother.com.vn/-/media/ap2/products/faxmachine/fax-2840/fax-machine-fax-2840-l.webp?rev=d1d70615152e49f1bc580c2281b786ba    " alt="Máy fax">
+                    <img src="https://www.brother.com.vn/-/media/ap2/products/faxmachine/fax-2840/fax-machine-fax-2840-l.webp?rev=d1d70615152e49f1bc580c2281b786ba     " alt="Máy fax">
                     <div class="printer-info">
                         <div class="printer-type">Fax Laser</div>
                         <h3 class="printer-name">Brother FAX-2840</h3>
@@ -2029,10 +2170,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
-                    <img src="https://bizweb.dktcdn.net/100/521/696/products/2021-4-19-637544247657181951-brother-mfc-t920dw-den-2.jpg?v=1749697474963    " alt="Máy fax phun">
+                    <img src="https://bizweb.dktcdn.net/100/521/696/products/2021-4-19-637544247657181951-brother-mfc-t920dw-den-2.jpg?v=1749697474963     " alt="Máy fax phun">
                     <div class="printer-info">
                         <div class="printer-type">Fax Đa Năng</div>
                         <h3 class="printer-name">Brother MFC-T920DW</h3>
@@ -2042,10 +2183,10 @@
                 </div>
                 <div class="printer-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-28%</span>
                     </div>
-                    <img src="https://www.meme3d.com/wp-content/uploads/2022/12/ender-3-v2.webp    " alt="Máy in 3D">
+                    <img src="https://www.meme3d.com/wp-content/uploads/2022/12/ender-3-v2.webp     " alt="Máy in 3D">
                     <div class="printer-info">
                         <div class="printer-type">In 3D FDM</div>
                         <h3 class="printer-name">Creality Ender-3 V2</h3>
@@ -2065,91 +2206,91 @@
             <div class="webcam-grid">
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-15%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770433521_3574.png    " alt="Insta360 Link 2">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770433521_3574.png     " alt="Insta360 Link 2">
                     <div class="webcam-name">Insta360 Link 2 (4K)</div>
                     <div class="webcam-price">4.990.000đ <span class="old">5.900.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-22%</span>
                     </div>
-                    <img src="https://resource.logitech.com/content/dam/logitech/en/products/webcams/mx-brio-705/gallery/mx-brio-705-for-business-1.png    " alt="Logitech MX Brio">
+                    <img src="https://resource.logitech.com/content/dam/logitech/en/products/webcams/mx-brio-705/gallery/mx-brio-705-for-business-1.png     " alt="Logitech MX Brio">
                     <div class="webcam-name">Logitech MX Brio (4K)</div>
                     <div class="webcam-price">3.490.000đ <span class="old">4.500.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-25%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205288_5057.png    " alt="Opal Tadpole">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205288_5057.png     " alt="Opal Tadpole">
                     <div class="webcam-name">Opal Tadpole</div>
                     <div class="webcam-price">2.990.000đ <span class="old">4.000.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-30%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770204854_6499.png    " alt="Logitech Brio">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770204854_6499.png     " alt="Logitech Brio">
                     <div class="webcam-name">Logitech Brio 4K Ultra HD</div>
                     <div class="webcam-price">2.490.000đ <span class="old">3.600.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-18%</span>
                     </div>
-                    <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/02/razer-kiyo-pro-ultra.png    " alt="Razer Kiyo Pro">
+                    <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/02/razer-kiyo-pro-ultra.png     " alt="Razer Kiyo Pro">
                     <div class="webcam-name">Razer Kiyo Pro</div>
                     <div class="webcam-price">2.190.000đ <span class="old">2.690.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-35%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770430836_8316.png    " alt="Anker PowerConf">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770430836_8316.png     " alt="Anker PowerConf">
                     <div class="webcam-name">Anker PowerConf C200 (2K)</div>
                     <div class="webcam-price">1.290.000đ <span class="old">2.000.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-20%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770213811_9906.png    " alt="Logitech C922">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770213811_9906.png     " alt="Logitech C922">
                     <div class="webcam-name">Logitech C922 Pro Stream</div>
                     <div class="webcam-price">1.490.000đ <span class="old">1.890.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-12%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205056_4525.png    " alt="Jabra PanaCast">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770205056_4525.png     " alt="Jabra PanaCast">
                     <div class="webcam-name">Jabra PanaCast 20 (4K)</div>
                     <div class="webcam-price">3.990.000đ <span class="old">4.550.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-10%</span>
                     </div>
-                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770431963_5698.png    " alt="Poly Studio">
+                    <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770431963_5698.png     " alt="Poly Studio">
                     <div class="webcam-name">Poly Studio P15</div>
                     <div class="webcam-price">4.490.000đ <span class="old">5.000.000đ</span></div>
                 </div>
                 <div class="webcam-card">
                     <div class="badge-sale">
-                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png" alt="Sale">
+                        <img src="https://i.ibb.co/zHZzMnyF/Sale.png " alt="Sale">
                         <span class="badge-sale-text">-40%</span>
                     </div>
-                    <img src="https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/products/logitech/webcams/c270-hd-webcam/gallery/c270-hd-webcam-1-0224.png" alt="Logitech C270">
+                    <img src="https://resource.logitech.com/c_fill ,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/products/logitech/webcams/c270-hd-webcam/gallery/c270-hd-webcam-1-0224.png" alt="Logitech C270">
                     <div class="webcam-name">Logitech C270 HD (720p)</div>
                     <div class="webcam-price">490.000đ <span class="old">820.000đ</span></div>
                 </div>
@@ -2163,7 +2304,7 @@
                 <p class="installment-desc">Mua sắm dễ dàng với chương trình trả góp qua thẻ tín dụng. Không cần thế chấp, thủ tục đơn giản, duyệt nhanh trong 5 phút.</p>
                 <button class="btn-primary" style="background: #FFFFFF; color: #667eea;" onclick="showScene('contact')">Tìm hiểu ngay</button>
             </div>
-            <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770433341_6197.png    " alt="Trả góp 0%" class="installment-image">
+            <img src="https://d2wuvg8krwnvon.cloudfront.net/media/user_space/fc30548bac7c/ai_custom_img/custom_1770433341_6197.png     " alt="Trả góp 0%" class="installment-image">
         </section>
 
         <!-- Services Section -->
@@ -2174,28 +2315,28 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://mediadirhub.com/vibe/technician-handing-warranty-document-to-customer-in-service-center.png    " alt="Bảo hành chính hãng">
+                    <img src="https://mediadirhub.com/vibe/technician-handing-warranty-document-to-customer-in-service-center.png     " alt="Bảo hành chính hãng">
                     <div class="service-info">
                         <h3 class="service-title">Bảo hành chính hãng</h3>
                         <p class="service-desc">Tất cả sản phẩm đều được bảo hành chính hãng từ 12-36 tháng. Hỗ trợ đổi mới trong 7 ngày nếu lỗi kỹ thuật.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://mediadirhub.com/vibe/technician-replacing-laptop-screen-with-precision-tools.png    " alt="Sửa chữa laptop">
+                    <img src="https://mediadirhub.com/vibe/technician-replacing-laptop-screen-with-precision-tools.png     " alt="Sửa chữa laptop">
                     <div class="service-info">
                         <h3 class="service-title">Sửa chữa laptop</h3>
                         <p class="service-desc">Thay màn hình, bàn phím, pin, sửa mainboard, vệ sinh tản nhiệt. Linh kiện chính hãng, bảo hành 6 tháng.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://mediadirhub.com/vibe/technician-cleaning-dust-from-desktop-pc-internals-with-compressed-air.png    " alt="Sửa máy tính bàn">
+                    <img src="https://mediadirhub.com/vibe/technician-cleaning-dust-from-desktop-pc-internals-with-compressed-air.png     " alt="Sửa máy tính bàn">
                     <div class="service-info">
                         <h3 class="service-title">Sửa máy tính bàn</h3>
                         <p class="service-desc">Nâng cấp cấu hình, thay linh kiện, sửa chữa phần cứng. Tư vấn build PC theo nhu cầu và ngân sách.</p>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="https://mediadirhub.com/vibe/laptop-screen-showing-windows-11-desktop-with-office-and-photoshop-icons.png    " alt="Cài đặt phần mềm">
+                    <img src="https://mediadirhub.com/vibe/laptop-screen-showing-windows-11-desktop-with-office-and-photoshop-icons.png     " alt="Cài đặt phần mềm">
                     <div class="service-info">
                         <h3 class="service-title">Cài đặt phần mềm</h3>
                         <p class="service-desc">Cài Windows, Office, phần mềm đồ họa, diệt virus. Backup dữ liệu, phục hồi file đã xóa.</p>
@@ -2320,9 +2461,9 @@
                 </a>
 
                 <!-- Zalo -->
-                <a href="https://zalo.me/0914372327    " target="_blank" class="contact-card">
+                <a href="https://zalo.me/0914372327     " target="_blank" class="contact-card">
                     <div class="icon-box">
-                        <img src="https://mediadirhub.com/samples/logo-zalo-vector-16.jpg    " alt="Zalo">
+                        <img src="https://mediadirhub.com/samples/logo-zalo-vector-16.jpg     " alt="Zalo">
                     </div>
                     <div class="contact-info">
                         <div class="contact-label">Zalo</div>
@@ -2331,7 +2472,7 @@
                 </a>
 
                 <!-- WhatsApp -->
-                <a href="https://wa.me/84914372327    " target="_blank" class="contact-card">
+                <a href="https://wa.me/84914372327     " target="_blank" class="contact-card">
                     <div class="icon-box">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
@@ -2404,7 +2545,7 @@
                     <div class="map-address">32 Trần Quý Cáp, Phường Tân Thạnh<br>Tam Kỳ, Quảng Nam, Việt Nam</div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.2937916648957!2d108.4680173152601!3d15.576673780033034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169ddc1d4f7e9ed%3A0xf1728e864099c004!2sL%E1%BA%AFp%20Camera%20Qu%E1%BA%A3ng%20Nam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
+                    <iframe src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d3911.2937916648957!2d108.4680173152601!3d15.576673780033034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169ddc1d4f7e9ed%3A0xf1728e864099c004!2sL%E1%BA%AFp%20Camera%20Qu%E1%BA%A3ng%20Nam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s"
                             allowfullscreen=""
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
@@ -2447,7 +2588,7 @@
                     <li><a onclick="showScene('contact')">Địa chỉ cửa hàng</a></li>
                     <li><a href="tel:0914372327">Hotline: 0914 372 327</a></li>
                     <li><a href="mailto:tranlam236@gmail.com">Email: tranlam236@gmail.com</a></li>
-                    <li><a href="https://zalo.me/0914372327  " target="_blank">Zalo: 0914 372 327</a></li>
+                    <li><a href="https://zalo.me/0914372327   " target="_blank">Zalo: 0914 372 327</a></li>
                     <li><a>Facebook: Máy Tính Tam Kỳ (Đang Tiến Hành)</a></li>
                 </ul>
             </div>
@@ -2456,6 +2597,23 @@
             <p>&copy; 2024 Máy Tính Tam Kỳ. All rights reserved. | Designed with "Huynhgiaan_c00lkxidd" in Tam Ky</p>
         </div>
     </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons">
+        <a href="https://zalo.me/0914372327 " target="_blank" class="floating-btn zalo-btn" data-tooltip="Chat Zalo">
+            <img src="https://i.ibb.co/YTkypfNw/Zalo.png" alt="Zalo">
+        </a>
+        <a href="https://www.messenger.com/e2ee/t/8312555842105869 " target="_blank" class="floating-btn messenger-btn" data-tooltip="Messenger">
+            <svg viewBox="0 0 24 24" fill="white" style="width: 32px; height: 32px;">
+                <path d="M12,2C6.48,2,2,6.03,2,11c0,2.64,1.34,4.99,3.44,6.55V22l4.04-2.24C10.02,19.92,10.99,20,12,20c5.52,0,10-4.03,10-9 S17.52,2,12,2z M13.07,14.35l-2.55-2.73L6.5,14.35l4.01-4.26l2.6,2.73l3.97-2.73L13.07,14.35z"/>
+            </svg>
+        </a>
+        <a href="tel:0914372327" class="floating-btn phone-btn" data-tooltip="Gọi ngay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="width: 28px; height: 28px;">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- JavaScript -->
     <script>
