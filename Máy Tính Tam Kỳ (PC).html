@@ -1738,6 +1738,453 @@
                 display: none;
             }
         }
+
+        /* ============================================
+           FORM TƯ VẤN MIỄN PHÍ - THÊM MỚI
+           ============================================ */
+        .consult-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 24px;
+            margin: 0 40px 80px;
+            padding: 60px;
+            color: #FFFFFF;
+        }
+
+        .consult-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .consult-title {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .consult-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .form-group.full {
+                grid-column: 1 / -1;
+            }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.1);
+            color: #FFFFFF;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+            .form-input::placeholder, .form-textarea::placeholder {
+                color: rgba(255,255,255,0.6);
+            }
+
+            .form-input:focus, .form-select:focus, .form-textarea:focus {
+                outline: none;
+                border-color: #FFFFFF;
+                background: rgba(255,255,255,0.2);
+            }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+        }
+
+            .form-select option {
+                background: #1E3A8A;
+                color: #FFFFFF;
+            }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: #FFFFFF;
+            color: #667eea;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+            .btn-submit:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+
+            .btn-submit:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(102,126,234,0.3);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(34,197,94,0.2);
+            border: 2px solid #22c55e;
+            color: #FFFFFF;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            display: none;
+            background: rgba(239,68,68,0.2);
+            border: 2px solid #ef4444;
+            color: #FFFFFF;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* ============================================
+           GALLERY ADMIN - THÊM MỚI
+           ============================================ */
+        .gallery-section {
+            background: #FFFFFF;
+            border-radius: 24px;
+            margin: 0 40px 80px;
+            padding: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f0f2f5;
+        }
+
+            .gallery-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s;
+            }
+
+            .gallery-item:hover img {
+                transform: scale(1.05);
+            }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-delete {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            background: #ef4444;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+
+        .gallery-item:hover .gallery-delete {
+            opacity: 1;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 320px;
+        }
+
+            .admin-panel.active {
+                display: block;
+            }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .admin-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+
+        .admin-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .upload-zone {
+            border: 3px dashed #cbd5e1;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .upload-zone:hover, .upload-zone.dragover {
+                border-color: #1E3A8A;
+                background: #f0f4ff;
+            }
+
+            .upload-zone i {
+                font-size: 40px;
+                color: #94a3b8;
+                margin-bottom: 12px;
+            }
+
+        .upload-text {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .upload-hint {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .btn-clear {
+            width: 100%;
+            margin-top: 16px;
+            padding: 12px;
+            background: #ef4444;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .btn-clear:hover {
+                background: #dc2626;
+            }
+
+        .admin-note {
+            font-size: 11px;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Secret Button - Góc trái dưới */
+        .secret-zone {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 999;
+        }
+
+        .secret-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .secret-zone:hover .secret-btn {
+            opacity: 0.4;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .secret-btn:hover {
+            opacity: 1 !important;
+            transform: scale(1.1);
+        }
+
+        .secret-btn i {
+            color: #4b5563;
+            font-size: 20px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+            .lightbox.active {
+                display: flex;
+            }
+
+            .lightbox img {
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 12px;
+            }
+
+        .lightbox-close {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            color: #FFFFFF;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+            .lightbox-close:hover {
+                background: rgba(255,255,255,0.3);
+            }
+
+        .empty-gallery {
+            text-align: center;
+            padding: 60px;
+            color: #94a3b8;
+        }
+
+            .empty-gallery i {
+                font-size: 64px;
+                margin-bottom: 16px;
+            }
+
+        @media (max-width: 768px) {
+            .consult-section {
+                margin: 0 20px 40px;
+                padding: 30px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-section {
+                margin: 0 20px 40px;
+                padding: 30px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1797,6 +2244,8 @@
             </div>
         </section>
 
+        <!-- Form Tư Vấn Miễn Phí - THÊM MỚI -->
+        <!-- Gallery Section - THÊM MỚI -->
         <!-- Gaming Gear Section -->
         <section class="gaming-section" id="gaming">
             <div class="section-header">
@@ -2412,6 +2861,19 @@
         </section>
 
         <!-- CTA Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="section-header">
+                <h2 class="section-title">Hình Ảnh Thực Tế</h2>
+            </div>
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- Ảnh sẽ được thêm bằng JS -->
+            </div>
+            <div id="emptyGallery" class="empty-gallery" style="display: none;">
+                <i>📷</i>
+                <p>Chưa có ảnh nào</p>
+            </div>
+        </section>
+
         <div class="cta-section">
             <h2 class="cta-title">Bạn muốn tìm hiểu thêm?</h2>
             <p class="cta-text">Hãy liên hệ với chúng tôi để được tư vấn miễn phí và trải nghiệm dịch vụ tốt nhất tại Tam Kỳ.</p>
@@ -2556,6 +3018,65 @@
         </div>
     </div>
 
+    <section class="consult-section" id="consult">
+        <div class="consult-container">
+            <h2 class="consult-title">Đăng Ký Tư Vấn Miễn Phí</h2>
+            <form class="consult-form" id="consultForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Họ và tên *</label>
+                        <input type="text" name="name" class="form-input" placeholder="Nguyễn Văn A" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Số điện thoại *</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="0914xxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Địa chỉ</label>
+                        <input type="text" name="address" class="form-input" placeholder="Phường/Xã, Tam Kỳ">
+                    </div>
+                    <div class="form-group full">
+                        <label class="form-label">Loại máy tính quan tâm</label>
+                        <select name="product" class="form-select">
+                            <option value="">-- Chọn loại máy tính --</option>
+                            <option value="Laptop văn phòng">Laptop văn phòng</option>
+                            <option value="Laptop gaming">Laptop gaming</option>
+                            <option value="PC văn phòng">PC văn phòng</option>
+                            <option value="PC gaming">PC gaming</option>
+                            <option value="Linh kiện - CPU">Linh kiện - CPU</option>
+                            <option value="Linh kiện - RAM">Linh kiện - RAM</option>
+                            <option value="Linh kiện - SSD/HDD">Linh kiện - SSD/HDD</option>
+                            <option value="Linh kiện - VGA">Linh kiện - VGA</option>
+                            <option value="Màn hình máy tính">Màn hình máy tính</option>
+                            <option value="Gaming Gear">Gaming Gear</option>
+                            <option value="Máy in - Máy scan">Máy in - Máy scan</option>
+                            <option value="Webcam - Thiết bị khác">Webcam - Thiết bị khác</option>
+                            <option value="Cần tư vấn thêm">Cần tư vấn thêm</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label class="form-label">Ghi chú thêm</label>
+                        <textarea name="message" class="form-textarea" placeholder="Mô tả nhu cầu của bạn..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <span class="spinner" id="spinner"></span>
+                    <span id="btnText">Gửi yêu cầu tư vấn</span>
+                </button>
+                <div class="success-message" id="successMsg">
+                    ✓ Gửi thành công! Chúng tôi sẽ liên hệ bạn trong 15 phút.
+                </div>
+                <div class="error-message" id="errorMsg">
+                    ✗ Có lỗi xảy ra. Vui lòng gọi 0914.372.327!
+                </div>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -2598,6 +3119,33 @@
             <p>&copy; 2024 Máy Tính Tam Kỳ. All rights reserved. | Designed with "Huynhgiaan_c00lkxidd" in Tam Ky</p>
         </div>
     </footer>
+
+    <!-- Admin Panel - THÊM MỚI -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3 class="admin-title">Quản lý Gallery</h3>
+            <button class="admin-close" onclick="toggleAdmin()">×</button>
+        </div>
+        <div class="upload-zone" onclick="document.getElementById('fileInput').click()" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)" ondragleave="dragLeaveHandler(event)">
+            <div style="font-size: 40px; margin-bottom: 12px;">☁️</div>
+            <div class="upload-text">Click hoặc kéo thả ảnh</div>
+            <div class="upload-hint">JPG, PNG, WEBP</div>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;" onchange="handleFiles(this.files)">
+        </div>
+        <button class="btn-clear" onclick="clearGallery()">🗑️ Xóa tất cả ảnh</button>
+        <p class="admin-note">Ảnh chỉ lưu trong trình duyệt này</p>
+    </div>
+
+    <!-- Secret Zone - Góc trái dưới - THÊM MỚI -->
+    <div class="secret-zone">
+        <button class="secret-btn" onclick="toggleAdmin()">⚙️</button>
+    </div>
+
+    <!-- Lightbox - THÊM MỚI -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" alt="Full size">
+        <button class="lightbox-close">×</button>
+    </div>
 
     <!-- Floating Contact Buttons -->
     <div class="floating-buttons">
@@ -2696,6 +3244,189 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+        // =========================================
+        // GALLERY MANAGEMENT - THÊM MỚI
+        // =========================================
+
+        let galleryImages = JSON.parse(localStorage.getItem('pcGallery') || '[]');
+
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            const empty = document.getElementById('emptyGallery');
+
+            if (!grid) return;
+
+            if (galleryImages.length === 0) {
+                grid.innerHTML = '';
+                if (empty) empty.style.display = 'block';
+                return;
+            }
+
+            if (empty) empty.style.display = 'none';
+            grid.innerHTML = galleryImages.map((img, index) => `
+                        <div class="gallery-item" onclick="openLightbox('${img}')">
+                            <img src="${img}" alt="Máy tính Tam Kỳ ${index + 1}" loading="lazy">
+                            <div class="gallery-overlay">
+                                <span style="color: white; font-size: 24px;">🔍</span>
+                            </div>
+
+                        </div>
+                    `).join('');
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+
+                        let w = img.width, h = img.height;
+                        if (w > 800 || h > 800) {
+                            if (w > h) { h = h * 800 / w; w = 800; }
+                            else { w = w * 800 / h; h = 800; }
+                        }
+
+                        canvas.width = w;
+                        canvas.height = h;
+                        ctx.drawImage(img, 0, 0, w, h);
+
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                        galleryImages.push(dataUrl);
+                        localStorage.setItem('pcGallery', JSON.stringify(galleryImages));
+                        renderGallery();
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function dropHandler(e) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        }
+
+        function dragOverHandler(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        function dragLeaveHandler(e) {
+            e.currentTarget.classList.remove('dragover');
+        }
+
+
+
+        function clearGallery() {
+            if (confirm('Xóa TẤT CẢ ảnh?')) {
+                galleryImages = [];
+                localStorage.removeItem('pcGallery');
+                renderGallery();
+            }
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            if (lightbox && img) {
+                img.src = src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            if (panel) {
+                panel.classList.toggle('active');
+            }
+        }
+
+        // =========================================
+        // FORM SUBMISSION - THÊM MỚI
+        // =========================================
+
+        const consultForm = document.getElementById('consultForm');
+        if (consultForm) {
+            consultForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const spinner = document.getElementById('spinner');
+                const btnText = document.getElementById('btnText');
+                const successMsg = document.getElementById('successMsg');
+                const errorMsg = document.getElementById('errorMsg');
+                const submitBtn = consultForm.querySelector('button[type="submit"]');
+
+                if (successMsg) successMsg.style.display = 'none';
+                if (errorMsg) errorMsg.style.display = 'none';
+
+                if (spinner) spinner.style.display = 'inline-block';
+                if (btnText) btnText.textContent = 'Đang gửi...';
+                if (submitBtn) submitBtn.disabled = true;
+
+                // URL Google Apps Script - THAY BẰNG URL CỦA BẠN
+                const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRjkJTdM49vaU9RWNVtW6_WiaZSL_I2hjYHNdjCBk5_50x1_TaJF4q8JGOtuP0NCGJ_A/exec';
+
+                try {
+                    const formData = new FormData(consultForm);
+                    const params = new URLSearchParams();
+
+                    for (let [key, value] of formData.entries()) {
+                        params.append(key, value);
+                    }
+
+                    const response = await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        body: params,
+                        redirect: 'follow'
+                    });
+
+                    if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        if (successMsg) successMsg.style.display = 'block';
+                        consultForm.reset();
+                    } else {
+                        throw new Error(result.message || 'Unknown error');
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    if (errorMsg) {
+                        errorMsg.textContent = 'Lỗi: ' + error.message + '. Vui lòng gọi 0914.372.327!';
+                        errorMsg.style.display = 'block';
+                    }
+                } finally {
+                    if (spinner) spinner.style.display = 'none';
+                    if (btnText) btnText.textContent = 'Gửi yêu cầu tư vấn';
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // Phím tắt ESC để đóng lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Initialize gallery on load
+        document.addEventListener('DOMContentLoaded', renderGallery);
     </script>
 </body>
 </html>
