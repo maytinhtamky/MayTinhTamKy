@@ -604,6 +604,44 @@
             </a>
         </div>
     </section>
+    <!-- About Section -->
+    <section id="about-section" style="padding: 24px 20px; background: rgba(255,255,255,0.05);">
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Giới thiệu</h2>
+        </div>
+        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 24px; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 24px;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="font-size: 64px; font-weight: 300; color: #ffd700; line-height: 1;">2017</div>
+                <div style="font-size: 16px; font-weight: 700; margin-top: 8px; color: #93bbfc;">Thành lập</div>
+            </div>
+            <p style="font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8; text-align: center; margin-bottom: 20px;">
+                Máy Tính Tam Kỳ được thành lập năm 2017, là cửa hàng máy tính uy tín hàng đầu tại Tam Kỳ, Quảng Nam. Chuyên cung cấp laptop, linh kiện chính hãng và dịch vụ sửa chữa chuyên nghiệp.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
+                <div style="text-align: center; padding: 16px; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                    <div style="font-size: 24px; font-weight: 800; color: #ffd700;">7+</div>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Năm kinh nghiệm</div>
+                </div>
+                <div style="text-align: center; padding: 16px; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                    <div style="font-size: 24px; font-weight: 800; color: #ffd700;">5000+</div>
+                    <div style="font-size: 12px; color: rgba(255,255,255,0.6);">Khách hàng</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="section-header-mobile">
+            <h2 class="section-title-mobile">Hình ảnh thực tế</h2>
+        </div>
+        <div id="galleryGrid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 24px;">
+            <!-- Gallery items will be added here -->
+        </div>
+        <div id="emptyGallery" style="text-align: center; padding: 40px; color: rgba(255,255,255,0.5); display: none;">
+            <div style="font-size: 48px; margin-bottom: 12px;">📷</div>
+            <p>Chưa có hình ảnh</p>
+        </div>
+    </section>
+
 
     <!-- Quick Categories -->
     <div class="quick-categories">
@@ -911,7 +949,37 @@
         <div class="map-container-mobile">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.2937916648957!2d108.4680173152601!3d15.576673780033034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3169ddc1d4f7e9ed%3A0xf1728e864099c004!2sL%E1%BA%AFp%20Camera%20Qu%E1%BA%A3ng%20Nam!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
         </div>
-    </section>
+    
+        <!-- Form Tư Vấn -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 24px; margin-top: 24px;">
+            <h3 style="font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 20px; color: #FFFFFF;">Đăng ký tư vấn miễn phí</h3>
+            <form id="consultForm" style="display: flex; flex-direction: column; gap: 12px;">
+                <input type="text" name="name" placeholder="Họ và tên *" required style="padding: 14px 16px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 15px; outline: none;">
+                <input type="tel" name="phone" placeholder="Số điện thoại *" required style="padding: 14px 16px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 15px; outline: none;">
+                <input type="email" name="email" placeholder="Email" style="padding: 14px 16px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 15px; outline: none;">
+                <select name="product" style="padding: 14px 16px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 15px; outline: none; appearance: none;">
+                    <option value="" style="background: #1E3A8A; color: #FFFFFF;">-- Chọn loại máy tính --</option>
+                    <option value="Laptop văn phòng" style="background: #1E3A8A; color: #FFFFFF;">Laptop văn phòng</option>
+                    <option value="Laptop gaming" style="background: #1E3A8A; color: #FFFFFF;">Laptop gaming</option>
+                    <option value="PC văn phòng" style="background: #1E3A8A; color: #FFFFFF;">PC văn phòng</option>
+                    <option value="PC gaming" style="background: #1E3A8A; color: #FFFFFF;">PC gaming</option>
+                    <option value="Linh kiện" style="background: #1E3A8A; color: #FFFFFF;">Linh kiện (CPU/RAM/SSD/VGA)</option>
+                    <option value="Màn hình" style="background: #1E3A8A; color: #FFFFFF;">Màn hình</option>
+                    <option value="Gaming Gear" style="background: #1E3A8A; color: #FFFFFF;">Gaming Gear</option>
+                    <option value="Máy in" style="background: #1E3A8A; color: #FFFFFF;">Máy in</option>
+                    <option value="Webcam" style="background: #1E3A8A; color: #FFFFFF;">Webcam</option>
+                    <option value="Khác" style="background: #1E3A8A; color: #FFFFFF;">Cần tư vấn thêm</option>
+                </select>
+                <textarea name="message" placeholder="Ghi chú thêm..." rows="3" style="padding: 14px 16px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #FFFFFF; font-size: 15px; outline: none; resize: none;"></textarea>
+                <button type="submit" style="padding: 16px; background: #FFFFFF; color: #667eea; border: none; border-radius: 12px; font-size: 16px; font-weight: 700; margin-top: 8px;">
+                    <span id="btnText">Gửi yêu cầu</span>
+                </button>
+                <div id="successMsg" style="display: none; background: rgba(34,197,94,0.2); border: 2px solid #22c55e; padding: 12px; border-radius: 8px; text-align: center; margin-top: 12px; font-size: 14px;">
+                    ✓ Đã gửi! Chúng tôi sẽ liên hệ bạn sớm.
+                </div>
+            </form>
+        </div>
+</section>
 
     <!-- Bottom Spacer -->
     <div class="bottom-spacer"></div>
@@ -925,6 +993,14 @@
             </svg>
             Trang chủ
         </a>
+        <a href="#about" class="nav-item" onclick="scrollToSection('about-section')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Giới thiệu
+        </a>
         <a href="#products" class="nav-item" onclick="scrollToSection('laptops-section')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -932,13 +1008,6 @@
                 <line x1="12" y1="17" x2="12" y2="21"></line>
             </svg>
             Sản phẩm
-        </a>
-        <a href="#services" class="nav-item" onclick="scrollToSection('services-section')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
-            Dịch vụ
         </a>
         <a href="#contact" class="nav-item" onclick="scrollToSection('contact-section')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1059,6 +1128,165 @@
             }
             lastTouchEnd = now;
         }, false);
-    </script>
+    
+
+        // Gallery Management (không có nút delete)
+        let galleryImages = JSON.parse(localStorage.getItem('mobileGallery') || '[]');
+
+        
+
+        // Admin Functions
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            if (panel) {
+                panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        let w = img.width, h = img.height;
+                        if (w > 800 || h > 800) {
+                            if (w > h) { h = h * 800 / w; w = 800; }
+                            else { w = w * 800 / h; h = 800; }
+                        }
+                        canvas.width = w;
+                        canvas.height = h;
+                        ctx.drawImage(img, 0, 0, w, h);
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                        galleryImages.push(dataUrl);
+                        localStorage.setItem('mobileGallery', JSON.stringify(galleryImages));
+                        renderGallery();
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function dropHandler(e) {
+            e.preventDefault();
+            handleFiles(e.dataTransfer.files);
+        }
+
+        function dragOverHandler(e) {
+            e.preventDefault();
+        }
+
+        function clearGallery() {
+            if (confirm('Xóa TẤT CẢ ảnh?')) {
+                galleryImages = [];
+                localStorage.removeItem('mobileGallery');
+                renderGallery();
+            }
+        }
+function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            const empty = document.getElementById('emptyGallery');
+
+            if (!grid) return;
+
+            if (galleryImages.length === 0) {
+                grid.innerHTML = '';
+                if (empty) empty.style.display = 'block';
+                return;
+            }
+
+            if (empty) empty.style.display = 'none';
+            grid.innerHTML = galleryImages.map((img, index) => `
+                <div style="position: relative; aspect-ratio: 1; border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.1);" onclick="openLightbox('${img}')">
+                    <img src="${img}" alt="Máy tính Tam Kỳ ${index + 1}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                        <span style="color: white; font-size: 24px;">🔍</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.createElement('div');
+            lightbox.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;';
+            lightbox.innerHTML = `<img src="${src}" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px;" onclick="this.parentElement.remove(); document.body.style.overflow='auto';">`;
+            lightbox.onclick = () => {
+                lightbox.remove();
+                document.body.style.overflow = 'auto';
+            };
+            document.body.appendChild(lightbox);
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Form Submission
+        const consultForm = document.getElementById('consultForm');
+        if (consultForm) {
+            consultForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btnText = document.getElementById('btnText');
+                const successMsg = document.getElementById('successMsg');
+                const submitBtn = consultForm.querySelector('button[type="submit"]');
+
+                if (successMsg) successMsg.style.display = 'none';
+                if (btnText) btnText.textContent = 'Đang gửi...';
+                if (submitBtn) submitBtn.disabled = true;
+
+                const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRjkJTdM49vaU9RWNVtW6_WiaZSL_I2hjYHNdjCBk5_50x1_TaJF4q8JGOtuP0NCGJ_A/exec';
+
+                try {
+                    const formData = new FormData(consultForm);
+                    const params = new URLSearchParams();
+                    for (let [key, value] of formData.entries()) {
+                        params.append(key, value);
+                    }
+
+                    const response = await fetch(APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        body: params,
+                        redirect: 'follow'
+                    });
+
+                    if (!response.ok) throw new Error('HTTP error!');
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        if (successMsg) successMsg.style.display = 'block';
+                        consultForm.reset();
+                    }
+                } catch (error) {
+                    alert('Lỗi: ' + error.message + '. Vui lòng gọi 0914.372.327!');
+                } finally {
+                    if (btnText) btnText.textContent = 'Gửi yêu cầu';
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // Initialize gallery
+        renderGallery();
+</script>
+
+    <!-- Admin Panel - Secret -->
+    <div style="position: fixed; bottom: 100px; left: 20px; background: #FFFFFF; padding: 20px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 1000; width: 280px; display: none;" id="adminPanel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3 style="font-size: 16px; font-weight: 700; color: #1A1A1A; margin: 0;">📁 Quản lý ảnh</h3>
+            <button onclick="toggleAdmin()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: #666;">×</button>
+        </div>
+        <div style="border: 3px dashed #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; cursor: pointer;" onclick="document.getElementById('mobileFileInput').click()" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+            <div style="font-size: 32px; margin-bottom: 8px;">☁️</div>
+            <div style="font-size: 14px; color: #64748b;">Click để tải ảnh</div>
+            <input type="file" id="mobileFileInput" accept="image/*" multiple style="display: none;" onchange="handleFiles(this.files)">
+        </div>
+        <button onclick="clearGallery()" style="width: 100%; margin-top: 12px; padding: 10px; background: #ef4444; color: #FFFFFF; border: none; border-radius: 8px; font-size: 14px; font-weight: 600;">🗑️ Xóa tất cả</button>
+    </div>
+
+    <!-- Secret Button -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 80px; height: 80px; z-index: 999;" onmouseover="document.getElementById('secretBtn').style.opacity='0.5'" onmouseout="document.getElementById('secretBtn').style.opacity='0'">
+        <button id="secretBtn" onclick="toggleAdmin()" style="position: fixed; bottom: 20px; left: 20px; width: 40px; height: 40px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; cursor: pointer; opacity: 0; transition: all 0.3s; font-size: 16px;">⚙️</button>
+    </div>
 </body>
 </html>
